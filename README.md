@@ -4,4 +4,4 @@ Live Demo
 GitHub Repository
 Features
 Technologies
-Screenshots
+
