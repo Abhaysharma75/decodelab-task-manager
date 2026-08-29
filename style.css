@@ -1,0 +1,855 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #222;
+
+    min-height: 100vh;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 8%;
+
+    background: #1f3c88;
+
+    color: white;
+}
+
+
+.navbar h1 {
+    font-size: 28px;
+}
+
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   DARK MODE BUTTON
+===================================================== */
+
+#themeToggle {
+    padding: 9px 15px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    background: white;
+
+    color: #1f3c88;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+#themeToggle:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 65vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background:
+        linear-gradient(135deg,
+            #dbeafe,
+            #eff6ff);
+
+    transition: background 0.3s ease;
+}
+
+
+.hero-content {
+    max-width: 750px;
+}
+
+
+.hero h2 {
+    font-size: 48px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   GET STARTED BUTTON
+===================================================== */
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   TASK SECTION
+===================================================== */
+
+.task-section {
+    max-width: 1140px;
+
+    margin: 60px auto;
+
+    padding: 30px 20px;
+
+    text-align: center;
+}
+
+
+.task-section h2 {
+    font-size: 36px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   TASK INPUT BOX
+===================================================== */
+
+.task-box {
+    display: flex;
+
+    gap: 15px;
+
+    width: 100%;
+}
+
+
+/* INPUT */
+
+.task-box input {
+    flex: 1;
+
+    padding: 17px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+
+    color: #222;
+
+    transition: 0.3s;
+}
+
+
+.task-box input:focus {
+    border-color: #1f3c88;
+
+    box-shadow:
+        0 0 0 3px rgba(31,
+            60,
+            136,
+            0.12);
+}
+
+
+/* =====================================================
+   PRIORITY SELECT
+===================================================== */
+
+#prioritySelect {
+    padding: 14px 18px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #222;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    outline: none;
+
+    min-width: 220px;
+}
+
+
+#prioritySelect:focus {
+    border-color: #1f3c88;
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+#addTaskBtn {
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+#addTaskBtn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    margin-top: 25px;
+
+    width: 100%;
+}
+
+
+.search-box input {
+    width: 100%;
+
+    padding: 17px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+
+    color: #222;
+}
+
+
+.search-box input:focus {
+    border-color: #1f3c88;
+}
+
+
+/* =====================================================
+   TASK LIST
+===================================================== */
+
+#taskList {
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+
+#taskList li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: white;
+
+    padding: 17px;
+
+    margin-bottom: 12px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+
+#taskList li:hover {
+    transform: translateY(-2px);
+}
+
+
+/* TASK TEXT */
+
+.task-text {
+    flex: 1;
+
+    cursor: pointer;
+
+    word-break: break-word;
+}
+
+
+/* COMPLETED */
+
+.completed {
+    text-decoration: line-through;
+
+    opacity: 0.55;
+}
+
+
+/* =====================================================
+   PRIORITY BADGES
+===================================================== */
+
+.priority-badge {
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* LOW */
+
+.priority-badge.low {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* MEDIUM */
+
+.priority-badge.medium {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+/* HIGH */
+
+.priority-badge.high {
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.delete-btn {
+    background: #e63946;
+
+    color: white;
+
+    border: none;
+
+    padding: 9px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.delete-btn:hover {
+    transform: scale(1.05);
+
+    background: #c82333;
+}
+
+
+/* =====================================================
+   COMPLETED COUNTER
+===================================================== */
+
+.counter {
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+#completedCount {
+    color: #1f3c88;
+}
+
+
+/* =====================================================
+   CLEAR ALL
+===================================================== */
+
+.clear-btn {
+    margin-top: 20px;
+
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #dc2626;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.clear-btn:hover {
+    transform: translateY(-2px);
+
+    background: #b91c1c;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+    max-width: 900px;
+
+    margin: 60px auto;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+.about h2 {
+    font-size: 32px;
+
+    margin-bottom: 18px;
+}
+
+
+.about p {
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: #1f3c88;
+
+    color: white;
+
+    margin-top: 60px;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+    background: #111827;
+
+    color: #f9fafb;
+}
+
+
+/* NAVBAR */
+
+body.dark-mode .navbar {
+    background: #0b1220;
+}
+
+
+/* HERO */
+
+body.dark-mode .hero {
+    background:
+        linear-gradient(135deg,
+            #1f2937,
+            #111827);
+}
+
+
+/* TASK SECTION */
+
+body.dark-mode .task-section {
+    color: #f9fafb;
+}
+
+
+/* TASK INPUT */
+
+body.dark-mode .task-box input {
+    background: #1f1f1f;
+
+    color: white;
+
+    border-color: #555;
+}
+
+
+body.dark-mode .task-box input::placeholder {
+    color: #999;
+}
+
+
+/* PRIORITY */
+
+body.dark-mode #prioritySelect {
+    background: #1f1f1f;
+
+    color: white;
+
+    border-color: #555;
+}
+
+
+/* SEARCH */
+
+body.dark-mode .search-box input {
+    background: #1f1f1f;
+
+    color: white;
+
+    border-color: #555;
+}
+
+
+body.dark-mode .search-box input::placeholder {
+    color: #999;
+}
+
+
+/* TASK CARD */
+
+body.dark-mode #taskList li {
+    background: #1f1f1f;
+
+    color: white;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ABOUT */
+
+body.dark-mode .about {
+    background: #181818;
+
+    color: white;
+}
+
+
+/* COUNTER */
+
+body.dark-mode #completedCount {
+    color: #93c5fd;
+}
+
+
+/* THEME BUTTON */
+
+body.dark-mode #themeToggle {
+    background: #1f2937;
+
+    color: white;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px 5%;
+    }
+
+
+    .nav-links {
+        width: 100%;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+
+    .hero {
+        min-height: 55vh;
+
+        padding: 40px 15px;
+    }
+
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .task-section {
+        width: 100%;
+
+        padding: 25px 15px;
+    }
+
+
+    .task-section h2 {
+        font-size: 30px;
+    }
+
+
+    .task-box {
+        flex-direction: column;
+    }
+
+
+    .task-box input,
+    #prioritySelect,
+    #addTaskBtn {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    #taskList li {
+        flex-wrap: wrap;
+
+        align-items: flex-start;
+    }
+
+
+    .task-text {
+        width: 100%;
+    }
+
+
+    .priority-badge {
+        margin-left: 0;
+    }
+
+
+    .delete-btn {
+        margin-left: auto;
+    }
+
+
+    .about {
+        margin: 40px 15px;
+
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .navbar h1 {
+        font-size: 24px;
+    }
+
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    #themeToggle {
+        font-size: 13px;
+
+        padding: 8px 11px;
+    }
+
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+    }
+
+
+    .task-section h2 {
+        font-size: 26px;
+    }
+
+
+    #taskList li {
+        padding: 14px;
+    }
+
+
+    .about h2 {
+        font-size: 26px;
+    }
+
+}
