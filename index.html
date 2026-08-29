@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow - Responsive Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+        <nav class="navbar">
+
+            <h1>TaskFlow</h1>
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#tasks">Tasks</a>
+
+                <a href="#about">About</a>
+
+                <button id="themeToggle">
+                    🌙 Dark Mode
+                </button>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h2>
+                    Manage Your Tasks Easily
+                </h2>
+
+                <p>
+                    A simple, responsive and professional
+                    task management application built using
+                    HTML, CSS and JavaScript.
+                </p>
+
+                <a href="#tasks" class="btn">
+                    Get Started
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TASK SECTION
+        ========================== -->
+
+        <section class="task-section" id="tasks">
+
+            <h2>My Tasks</h2>
+
+
+            <!-- TASK INPUT -->
+
+            <div class="task-box">
+
+                <input type="text" id="taskInput" placeholder="Enter a new task..." autocomplete="off">
+
+
+                <select id="prioritySelect">
+
+                    <option value="low">
+                        🟢 Low Priority
+                    </option>
+
+                    <option value="medium">
+                        🟡 Medium Priority
+                    </option>
+
+                    <option value="high">
+                        🔴 High Priority
+                    </option>
+
+                </select>
+
+
+                <button id="addTaskBtn">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <input type="text" id="searchInput" placeholder="🔍 Search your tasks..." autocomplete="off">
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <ul id="taskList"></ul>
+
+
+            <!-- COUNTER -->
+
+            <p class="counter">
+
+                Completed Tasks:
+                <span id="completedCount">
+                    0
+                </span>
+
+            </p>
+
+
+            <!-- CLEAR ALL -->
+
+            <button id="clearAllBtn" class="clear-btn">
+                🗑️ Clear All
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section class="about" id="about">
+
+            <h2>
+                About This Project
+            </h2>
+
+            <p>
+                TaskFlow is a responsive frontend project
+                developed as part of my DecodeLabs internship.
+                It demonstrates HTML structure, CSS styling,
+                responsive design, JavaScript DOM manipulation,
+                local storage, task priority and dark mode.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 TaskFlow |
+            DecodeLabs Internship Project
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
